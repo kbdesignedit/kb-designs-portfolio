@@ -1,3 +1,26 @@
+@font-face {
+  font-family: "Camelia Beauty";
+  src: url("../fonts/camelina-beauty.regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Moon Creme";
+  src: url("../fonts/Moon Creme.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amanda";
+  src: url("../fonts/Amanda.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 /* =============================================
    KATLYN BROWN — Portfolio Website
    Brand Colors & Design System
