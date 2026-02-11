@@ -466,6 +466,21 @@ p,
   color: var(--ivory-cream);
   margin-bottom: 10px;
 }
+/* HERO NAME: force Moon Creme + ALL CAPS (Katlyn Brown) */
+.hero-title,
+.hero-title * {
+  font-family: var(--font-display) !important; /* Moon Creme */
+  text-transform: uppercase !important;
+  font-style: normal !important;
+  letter-spacing: var(--title-letterspacing) !important;
+}
+
+/* If you have a span class like "highlight" on Brown, kill the special styling */
+.hero-title .highlight {
+  color: inherit !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+}
 
 .hero-title .highlight {
   color: var(--desert-sand);
