@@ -51,9 +51,9 @@
   --accent-hover: var(--deep-saddle);
 
   /* Typography */
-  --font-display: 'Cormorant Garamond', 'Georgia', serif;
-  --font-body: 'Nunito Sans', 'Helvetica Neue', sans-serif;
-  --font-accent: 'Josefin Sans', sans-serif;
+  --font-display: "Moon Creme", serif;
+  --font-body: "Amanda", sans-serif;
+  --font-accent: "Camelia Beauty", cursive;
 
   /* Spacing */
   --section-padding: 120px;
