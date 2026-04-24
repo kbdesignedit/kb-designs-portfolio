@@ -1,0 +1,602 @@
+import { Hono } from 'hono'
+
+const app = new Hono()
+
+app.get('/', (c) => {
+  return c.html(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katlyn Brown — Instructional Designer & Creative Content Strategist | KB Designs</title>
+  <meta name="description" content="Portfolio of Katlyn Brown — Instructional Designer, eLearning Developer, and Creative Content Strategist based in Madisonville, Kentucky. Results-driven learning professional creating high-impact eLearning solutions.">
+  <meta name="keywords" content="instructional designer, eLearning developer, content strategist, Katlyn Brown, KB Designs, curriculum development, ADDIE, learning experience design">
+  <meta property="og:title" content="Katlyn Brown — KB Designs Portfolio">
+  <meta property="og:description" content="Instructional Designer & Creative Content Strategist creating high-impact eLearning solutions.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/static/fonts/Moon%20Creme.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/static/fonts/camelia-beauty.regular.otf" as="font" type="font/opentype" crossorigin>
+  <link rel="preload" href="/static/fonts/Hailey.otf" as="font" type="font/opentype" crossorigin>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-name">KATLYN BROWN</div>
+    <div class="preloader-line"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">KB <span>DESIGNS</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#experience">Resume</a>
+        <a href="#testimonials">Kind Words</a>
+        <a href="#contact" class="nav-cta">Let's Connect</a>
+      </div>
+      <div class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-label">Instructional Designer &amp; Content Strategist</span>
+        <h1 class="hero-title">KATLYN<br><span class="highlight">BROWN</span></h1>
+        <p class="hero-subtitle">Designing Learning That Drives Results</p>
+        <p class="hero-desc">Results-driven instructional designer with 4+ years creating high-impact eLearning solutions. I transform complex ideas into engaging, accessible experiences that boost engagement by 40% and deliver measurable ROI.</p>
+        <div class="hero-buttons">
+          <a href="#portfolio" class="btn btn-primary">View My Work <span class="btn-icon">&rarr;</span></a>
+          <a href="#contact" class="btn btn-outline">Let's Talk</a>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="hero-image-frame">
+          <img src="/static/images/katlyn-brown-hero.jpg" alt="Katlyn Brown — Instructional Designer" loading="eager">
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-col reveal-left">
+          <img src="/static/images/lifestyle-casual.jpg" alt="Katlyn Brown lifestyle portrait" class="about-image-main">
+          <div class="about-accent-block">
+            <div class="number">4+</div>
+            <div class="label">Years of Instructional Design Experience</div>
+          </div>
+        </div>
+        <div class="about-content reveal-right">
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">RESULTS-DRIVEN LEARNING PROFESSIONAL</h2>
+          <p class="about-text">I'm an instructional designer and content strategist who transforms complex ideas into engaging, accessible learning experiences. With a background spanning education, digital marketing, and creative design, I bring a unique lens to every project.</p>
+          <p class="about-text">I combine adult learning theory, ADDIE methodology, and data analytics to design courses that don't just engage learners &mdash; they change behavior and drive real business results. Whether onboarding new hires, upskilling a workforce, or reinventing compliance training, I create experiences that stick.</p>
+          <p class="about-text">Based in Madisonville, Kentucky, I've worked with diverse organizations from wellness brands to educational institutions, always focused on translating complex information into beautiful, learner-centered experiences.</p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number">35%</div>
+              <div class="stat-label">Completion Rate Increase</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">40%</div>
+              <div class="stat-label">Engagement Improvement</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">1,000+</div>
+              <div class="stat-label">Learners Trained</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header reveal">
+        <span class="section-label">What I Do</span>
+        <h2 class="section-title">SERVICES &amp; EXPERTISE</h2>
+        <p class="section-desc">From instructional design to brand strategy, I help organizations create learning experiences and content that moves the needle.</p>
+      </div>
+      <div class="services-grid stagger-children">
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3>CUSTOM eLEARNING DEVELOPMENT</h3>
+          <p>Transform your training content into engaging, interactive courses using Articulate 360, Adobe Captivate, or Rise 360. SCORM-compliant and LMS-ready.</p>
+          <div class="service-tags">
+            <span class="service-tag">Articulate 360</span>
+            <span class="service-tag">SCORM</span>
+            <span class="service-tag">Interactive</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3>CONTENT DESIGN &amp; STRATEGY</h3>
+          <p>Crafting compelling digital content &mdash; from brand training materials to marketing campaigns &mdash; that tells authentic stories and connects with diverse audiences.</p>
+          <div class="service-tags">
+            <span class="service-tag">Brand Strategy</span>
+            <span class="service-tag">Storytelling</span>
+            <span class="service-tag">UX Writing</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <h3>CREATIVE &amp; GRAPHIC DESIGN</h3>
+          <p>Elevating projects through visual design using Adobe Creative Suite, Canva, and multimedia tools &mdash; ensuring every piece is polished, on-brand, and engaging.</p>
+          <div class="service-tags">
+            <span class="service-tag">Adobe Suite</span>
+            <span class="service-tag">Visual Design</span>
+            <span class="service-tag">Multimedia</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>LEADERSHIP TRAINING</h3>
+          <p>Design leadership development programs, new manager training, and executive onboarding experiences that build essential skills and drive organizational growth.</p>
+          <div class="service-tags">
+            <span class="service-tag">Leadership</span>
+            <span class="service-tag">Development</span>
+            <span class="service-tag">Coaching</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>COMPLIANCE &amp; CERTIFICATION</h3>
+          <p>Create compliance training that employees actually complete and remember. Track certifications and ensure regulatory requirements are met with measurable outcomes.</p>
+          <div class="service-tags">
+            <span class="service-tag">Compliance</span>
+            <span class="service-tag">Certification</span>
+            <span class="service-tag">Assessment</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>PERFORMANCE CONSULTING</h3>
+          <p>Identify performance gaps, conduct needs analysis, and design targeted learning interventions that solve real business problems and deliver measurable ROI.</p>
+          <div class="service-tags">
+            <span class="service-tag">Needs Analysis</span>
+            <span class="service-tag">Gap Analysis</span>
+            <span class="service-tag">Strategy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADDIE Process -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="process-header reveal">
+        <span class="section-label">My Approach</span>
+        <h2 class="section-title">THE ADDIE FRAMEWORK</h2>
+        <p class="section-desc">A proven, systematic approach to instructional design that ensures every learning experience is purposeful, engaging, and results-driven.</p>
+      </div>
+      <div class="process-steps stagger-children">
+        <div class="process-step reveal">
+          <div class="step-number">01</div>
+          <h3>ANALYZE</h3>
+          <p>Conduct needs analysis &amp; gap assessment. Interview stakeholders &amp; SMEs. Define learning objectives &amp; success metrics.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">02</div>
+          <h3>DESIGN</h3>
+          <p>Create instructional strategy &amp; course outline. Develop assessment strategy. Design storyboards &amp; prototypes.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">03</div>
+          <h3>DEVELOP</h3>
+          <p>Build interactive eLearning modules. Create multimedia assets. Develop assessments &amp; ensure SCORM compliance.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">04</div>
+          <h3>IMPLEMENT</h3>
+          <p>Deploy to LMS. Provide facilitator guides &amp; learner support. Train administrators &amp; monitor rollout.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">05</div>
+          <h3>EVALUATE</h3>
+          <p>Collect learner feedback. Measure knowledge gain &amp; behavior change. Calculate ROI &amp; iterate to improve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="portfolio-header">
+        <div>
+          <span class="section-label">Selected Work</span>
+          <h2 class="section-title">PORTFOLIO</h2>
+        </div>
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="instructional">Instructional Design</button>
+          <button class="filter-btn" data-filter="brand">Brand &amp; Product</button>
+          <button class="filter-btn" data-filter="marketing">Marketing</button>
+          <button class="filter-btn" data-filter="creative">Creative Content</button>
+        </div>
+      </div>
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <div class="portfolio-item featured reveal" data-category="instructional" data-project="online-course">
+          <img src="/static/images/portfolio-online-course.png" alt="Online Course Design" class="portfolio-thumb">
+          <div class="portfolio-overlay">
+            <span class="category">Instructional Design</span>
+            <h3>ONLINE COURSE DESIGN</h3>
+            <p>Comprehensive SCORM-compliant certification program serving 1,000+ professionals.</p>
+            <span class="portfolio-view-link">View Project &rarr;</span>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal" data-category="brand" data-project="moor-spa">
+          <img src="/static/images/portfolio-moor-spa.png" alt="Moor Spa Product Training" class="portfolio-thumb">
+          <div class="portfolio-overlay">
+            <span class="category">Brand &amp; Product Training</span>
+            <h3>MOOR SPA</h3>
+            <p>Branded product training materials for spa professionals.</p>
+            <span class="portfolio-view-link">View Project &rarr;</span>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal" data-category="brand" data-project="cnd-plexigel">
+          <img src="/static/images/portfolio-cnd.jpg" alt="CND Plexigel Training" class="portfolio-thumb">
+          <div class="portfolio-overlay">
+            <span class="category">Brand &amp; Product Training</span>
+            <h3>CND PLEXIGEL</h3>
+            <p>Step-by-step professional training guides for CND's product line.</p>
+            <span class="portfolio-view-link">View Project &rarr;</span>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal" data-category="instructional" data-project="uc-learning">
+          <img src="/static/images/portfolio-uc-learning.png" alt="UC Learning Platform" class="portfolio-thumb">
+          <div class="portfolio-overlay">
+            <span class="category">Instructional Design</span>
+            <h3>UC LEARNING</h3>
+            <p>Educational materials for Universal Companies' learning platform. 35% increase in completion rates.</p>
+            <span class="portfolio-view-link">View Project &rarr;</span>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal" data-category="marketing" data-project="safermobility">
+          <img src="/static/images/portfolio-safermobility.png" alt="SaferMobility Marketing" class="portfolio-thumb">
+          <div class="portfolio-overlay">
+            <span class="category">Marketing &amp; Content</span>
+            <h3>SAFERMOBILITY</h3>
+            <p>Marketing collateral for a campus safety application chosen by universities nationwide.</p>
+            <span class="portfolio-view-link">View Project &rarr;</span>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal" data-category="brand" data-project="bellabaci">
+          <img src="/static/images/portfolio-bellabaci.png" alt="Bellabaci Brand Training" class="portfolio-thumb">
+          <div class="portfolio-overlay">
+            <span class="category">Brand &amp; Product</span>
+            <h3>BELLABACI</h3>
+            <p>Product branding and training content for essential oil collections.</p>
+            <span class="portfolio-view-link">View Project &rarr;</span>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal" data-category="marketing" data-project="digital-marketing">
+          <img src="/static/images/portfolio-multi-platform.png" alt="Multi-Platform Campaigns" class="portfolio-thumb">
+          <div class="portfolio-overlay">
+            <span class="category">Digital Marketing</span>
+            <h3>MULTI-PLATFORM CAMPAIGNS</h3>
+            <p>Social media, email, and web campaigns for beauty and wellness brands.</p>
+            <span class="portfolio-view-link">View Project &rarr;</span>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal" data-category="creative" data-project="marriage-workbook">
+          <img src="/static/images/portfolio-stay-fight.png" alt="Stay Fight Overcome Workbook" class="portfolio-thumb">
+          <div class="portfolio-overlay">
+            <span class="category">Creative Content</span>
+            <h3>STAY. FIGHT. OVERCOME.</h3>
+            <p>A guided marriage workbook combining faith-centered reflection with conversation prompts.</p>
+            <span class="portfolio-view-link">View Project &rarr;</span>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal" data-category="creative" data-project="bible-plan">
+          <img src="/static/images/portfolio-busy-mom.png" alt="Busy Mom's Bible Plan" class="portfolio-thumb">
+          <div class="portfolio-overlay">
+            <span class="category">Creative Content</span>
+            <h3>BUSY MOM'S BIBLE PLAN</h3>
+            <p>A 30-day devotional designed for real life &mdash; 5 minutes a day with grace-filled encouragement.</p>
+            <span class="portfolio-view-link">View Project &rarr;</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Showcase -->
+  <section class="showcase">
+    <div class="container">
+      <div class="showcase-banner reveal">
+        <img src="/static/images/lifestyle-reading.jpg" alt="Katlyn Brown working" class="showcase-bg-image">
+        <div class="showcase-content">
+          <span class="section-label">Featured Work Sample</span>
+          <h2>INSTRUCTIONAL DESIGN PORTFOLIO</h2>
+          <p>Explore a deep-dive into my instructional design process &mdash; from aromatherapy curriculum to scaffolded workbooks. This sample demonstrates learning objectives, safety integration, and theory-to-practice instruction.</p>
+          <a href="/static/instructional-design-sample.pdf" target="_blank" class="btn btn-primary">Download Work Sample <span class="btn-icon">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <span class="section-label reveal">Resume</span>
+      <h2 class="section-title reveal">EXPERIENCE &amp; EDUCATION</h2>
+      <p class="section-desc reveal">A career built on transforming education through design, technology, and strategic thinking.</p>
+      <div class="experience-grid">
+        <div class="experience-col reveal-left">
+          <h3>PROFESSIONAL EXPERIENCE</h3>
+
+          <div class="timeline-item">
+            <span class="timeline-date">June 2025 &mdash; Present</span>
+            <h4 class="timeline-role">GRAPHIC DESIGNER (CONTRACT)</h4>
+            <span class="timeline-company">SaferMobility, LLC &bull; Remote</span>
+            <p class="timeline-desc">Design social media content, advertisements, and graphics aligned with brand guidelines. Produce high-quality promotional materials that boost brand visibility and drive audience engagement.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">May 2024 &mdash; Present</span>
+            <h4 class="timeline-role">MARKETING / CONTENT DESIGNER</h4>
+            <span class="timeline-company">Iron Horse Performance &bull; Madisonville, KY</span>
+            <p class="timeline-desc">Develop targeted marketing strategies increasing client engagement by 25%. Design conversion-optimized websites improving client conversion rates by 20%. Execute social media campaigns driving 30% growth in follower engagement.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">June 2022 &mdash; October 2023</span>
+            <h4 class="timeline-role">ONLINE COURSE COORDINATOR</h4>
+            <span class="timeline-company">Universal Companies &bull; Remote</span>
+            <p class="timeline-desc">Designed comprehensive CEU courses for 1,000+ online users. Increased course completion rates by 35% through LMS optimization. Enhanced learner engagement and knowledge retention by 40%.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">October 2021 &mdash; June 2022</span>
+            <h4 class="timeline-role">TITLE I INSTRUCTIONAL ASSISTANT</h4>
+            <span class="timeline-company">Hopkins County Public Schools &bull; Madisonville, KY</span>
+            <p class="timeline-desc">Developed customized instructional materials for diverse learning needs. Improved progress tracking efficiency by 60% through KSI reporting system management.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">December 2019 &mdash; June 2021</span>
+            <h4 class="timeline-role">SPECIAL EDUCATION TEACHER (EBD)</h4>
+            <span class="timeline-company">Hopkinsville High School &bull; Hopkinsville, KY</span>
+            <p class="timeline-desc">Created IEPs resulting in 85% of students meeting or exceeding goals. Reduced classroom disruptions by 35% through behavior intervention strategies. Increased parent engagement by 60%.</p>
+          </div>
+        </div>
+        <div class="experience-col reveal-right">
+          <h3>SKILLS &amp; TOOLS</h3>
+          <div class="skills-grid">
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Instructional Design (ADDIE)</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Curriculum Development</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Adobe Photoshop</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Adobe Illustrator</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Adobe Premiere Pro</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Adobe InDesign</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Canva Pro</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Articulate Storyline</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">LMS Administration</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Multimedia Production</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Content Strategy</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Brand Development</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">SEO &amp; Analytics</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Social Media Marketing</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">HTML / CSS</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">UX / UI Principles</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Video Production</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Project Management</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Copywriting</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Google Workspace</span></div>
+          </div>
+
+          <div class="education-block">
+            <h3>EDUCATION</h3>
+            <div class="timeline-item">
+              <span class="timeline-date">Murray State University &bull; Murray, KY</span>
+              <h4 class="timeline-role">BACHELOR OF SCIENCE IN EDUCATION</h4>
+              <p class="timeline-desc">Strong foundation in pedagogy, learning theory, and instructional methodology applied to both traditional and digital learning environments. GPA: 3.16</p>
+            </div>
+          </div>
+
+          <div class="resume-download">
+            <a href="/static/2026_Brown_Katlyn_Resume.docx" class="btn btn-dark-outline" download>Download Full Resume <span class="btn-icon">&darr;</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header reveal">
+        <span class="section-label">Kind Words</span>
+        <h2 class="section-title">WHAT PEOPLE SAY</h2>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial-slide active">
+          <p class="testimonial-text">"Katlyn was extremely organized and was able to work on multiple projects simultaneously. She provided design to the educational text and created an elevated finished product to ensure the students would be engaged."</p>
+          <span class="testimonial-author">Online Education Developer</span>
+          <span class="testimonial-role">Universal Companies</span>
+        </div>
+        <div class="testimonial-slide">
+          <p class="testimonial-text">"Katlyn is highly creative and knowledgeable of standard software. She has the ability to listen to the needs of a project and translate that vision into beautiful, engaging educational content. Her adeptness at learning new software is remarkable."</p>
+          <span class="testimonial-author">Lori Vargas, MBA</span>
+          <span class="testimonial-role">Online Education Developer</span>
+        </div>
+        <div class="testimonial-slide">
+          <p class="testimonial-text">"Katlyn demonstrated her commitment to creating learner-centered content that enhances understanding and retention. Her implementation of learning technology solutions increased course completion rates by 35%."</p>
+          <span class="testimonial-author">Professional Colleague</span>
+          <span class="testimonial-role">Education &amp; Design</span>
+        </div>
+      </div>
+      <div class="testimonial-dots">
+        <button class="testimonial-dot active" data-slide="0"></button>
+        <button class="testimonial-dot" data-slide="1"></button>
+        <button class="testimonial-dot" data-slide="2"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="section-title">LET'S CREATE SOMETHING TOGETHER</h2>
+          <p class="section-desc">Whether you need instructional design expertise, creative content strategy, or a complete eLearning solution &mdash; I'd love to hear about your project.</p>
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-info-text">
+                <span class="label">Email</span>
+                katyrbrown96@gmail.com
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="contact-info-text">
+                <span class="label">Phone</span>
+                (270) 210-2478
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-info-text">
+                <span class="label">Location</span>
+                Madisonville, Kentucky
+              </div>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="https://www.linkedin.com/in/katlyn-brown" target="_blank" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="mailto:katyrbrown96@gmail.com" class="social-link" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal-right">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="Jane Doe">
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="jane@example.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Project Type</label>
+              <select id="subject" name="subject">
+                <option value="">Select a service...</option>
+                <option value="elearning">eLearning Development</option>
+                <option value="content">Content Design &amp; Strategy</option>
+                <option value="graphic">Graphic &amp; Visual Design</option>
+                <option value="training">Training Program Design</option>
+                <option value="consulting">Performance Consulting</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Me About Your Project</label>
+              <textarea id="message" name="message" rows="5" placeholder="Share some details about what you're looking for..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Send Message <span class="btn-icon">&rarr;</span></button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <h3>THANK YOU!</h3>
+            <p>Your message has been sent. I'll be in touch soon!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#" class="footer-logo">KB DESIGNS</a>
+        <p class="footer-copy">&copy; 2026 Katlyn Brown. All rights reserved. Designed with intention.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content" id="modalContent">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>`)
+})
+
+// API endpoint for contact form
+app.post('/api/contact', async (c) => {
+  try {
+    const body = await c.req.json()
+    return c.json({ success: true, message: 'Message received!' })
+  } catch (e) {
+    return c.json({ success: false, message: 'Failed to process message.' }, 500)
+  }
+})
+
+export default app
