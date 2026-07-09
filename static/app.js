@@ -60,7 +60,7 @@ if (cursorDot && cursorRing) {
 // =============================================
 // NAVIGATION
 // =============================================
-const nav       = document.getElementById('nav');
+const nav       = document.getElementById('navbar');
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
 

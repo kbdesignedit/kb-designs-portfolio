@@ -4,16 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Katlyn Brown — Instructional Designer & Creative Strategist</title>
+  <meta name="description" content="KB Designs — Katlyn Brown is an instructional designer and content strategist who builds high-impact eLearning and training experiences that drive real results.">
   <link rel="stylesheet" href="static/style_editorial.css">
-  <link rel="preload" href="static/fonts/Kingdom.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="static/fonts/Cannia.otf" as="font" type="font/otf" crossorigin>
   <link rel="preload" href="static/fonts/RanessaScript.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="static/fonts/Assistant-Regular.ttf" as="font" type="font/ttf" crossorigin>
 </head>
 <body>
+
+<!-- CUSTOM CURSOR -->
+<div id="cursorDot"></div>
+<div id="cursorRing"></div>
 
 <!-- PRELOADER -->
 <div id="preloader">
   <div class="preloader-content">
-    <div class="preloader-name">KATLYN BROWN</div>
+    <div class="preloader-name">Katlyn Brown</div>
   </div>
 </div>
 
@@ -21,7 +27,7 @@
 <nav id="navbar">
   <div class="nav-inner">
     <div class="nav-logo">KB</div>
-    <button class="nav-toggle" id="navToggle">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
       <span></span>
       <span></span>
       <span></span>
@@ -39,7 +45,7 @@
 <!-- HERO SECTION -->
 <section class="hero" id="hero">
   <div class="hero-inner">
-    <span class="hero-label reveal">Instructional Designer & Content Strategist</span>
+    <span class="hero-label reveal">Instructional Designer &amp; Content Strategist</span>
     <h1 class="hero-title reveal">
       Katlyn
       <span class="hero-title-accent">Brown</span>
@@ -97,11 +103,11 @@
 <!-- SERVICES SECTION -->
 <section class="services" id="services">
   <span class="section-label reveal">What I Do</span>
-  <h2 class="section-title reveal">Services & Expertise</h2>
+  <h2 class="section-title reveal">Services &amp; Expertise</h2>
   <p class="section-subtitle reveal">From instructional design to brand strategy, I help organizations create learning experiences and content that moves the needle.</p>
   <div class="services-grid">
     <div class="service-card reveal">
-      <div class="service-icon">📚</div>
+      <span class="service-icon">📚</span>
       <h3 class="service-title">eLearning Development</h3>
       <p class="service-description">SCORM-compliant, interactive eLearning modules built in Articulate 360, Rise, and Lectora. Engaging, accessible, and built to perform.</p>
       <div class="service-tags">
@@ -111,8 +117,8 @@
       </div>
     </div>
     <div class="service-card reveal">
-      <div class="service-icon">✍️</div>
-      <h3 class="service-title">Content Design & Strategy</h3>
+      <span class="service-icon">✍️</span>
+      <h3 class="service-title">Content Design &amp; Strategy</h3>
       <p class="service-description">Brand storytelling, UX writing, and content strategy that connects with your audience and drives action across every channel.</p>
       <div class="service-tags">
         <span class="tag">Brand Strategy</span>
@@ -121,7 +127,7 @@
       </div>
     </div>
     <div class="service-card reveal">
-      <div class="service-icon">🎯</div>
+      <span class="service-icon">🎯</span>
       <h3 class="service-title">Instructional Design</h3>
       <p class="service-description">Full ADDIE-based curriculum design — from needs analysis and learning objectives through storyboards, assessments, and evaluation.</p>
       <div class="service-tags">
@@ -131,7 +137,7 @@
       </div>
     </div>
     <div class="service-card reveal">
-      <div class="service-icon">👥</div>
+      <span class="service-icon">👥</span>
       <h3 class="service-title">Training Program Design</h3>
       <p class="service-description">Onboarding programs, product training, compliance courses, and professional development curricula designed for real behavior change.</p>
       <div class="service-tags">
@@ -141,8 +147,8 @@
       </div>
     </div>
     <div class="service-card reveal">
-      <div class="service-icon">🎨</div>
-      <h3 class="service-title">Graphic & Visual Design</h3>
+      <span class="service-icon">🎨</span>
+      <h3 class="service-title">Graphic &amp; Visual Design</h3>
       <p class="service-description">Branded visual assets, marketing collateral, and multimedia design that communicates clearly and looks stunning across every format.</p>
       <div class="service-tags">
         <span class="tag">Adobe Suite</span>
@@ -151,7 +157,7 @@
       </div>
     </div>
     <div class="service-card reveal">
-      <div class="service-icon">📊</div>
+      <span class="service-icon">📊</span>
       <h3 class="service-title">Performance Consulting</h3>
       <p class="service-description">Root-cause analysis, gap assessments, and performance improvement strategies that align learning solutions to real business outcomes.</p>
       <div class="service-tags">
@@ -170,61 +176,61 @@
   <div class="portfolio-filters reveal">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="instructional">Instructional</button>
-    <button class="filter-btn" data-filter="brand">Brand & Product</button>
+    <button class="filter-btn" data-filter="brand">Brand &amp; Product</button>
     <button class="filter-btn" data-filter="marketing">Marketing</button>
     <button class="filter-btn" data-filter="creative">Creative</button>
   </div>
-  <div class="portfolio-grid">
-    <div class="portfolio-item reveal" data-category="instructional">
+  <div class="portfolio-grid" id="portfolioGrid">
+    <div class="portfolio-item reveal" data-category="instructional" data-project="online-course">
       <img src="static/images/portfolio-online-course.jpg" alt="Online Course Design" class="portfolio-image">
       <div class="portfolio-overlay">
         <span class="portfolio-category">Instructional Design</span>
         <h3 class="portfolio-title">Online Course Design</h3>
       </div>
     </div>
-    <div class="portfolio-item reveal" data-category="brand">
+    <div class="portfolio-item reveal" data-category="brand" data-project="moor-spa">
       <img src="static/images/portfolio-moor-spa.png" alt="Moor Spa Product Training" class="portfolio-image">
       <div class="portfolio-overlay">
-        <span class="portfolio-category">Brand & Product Training</span>
+        <span class="portfolio-category">Brand &amp; Product Training</span>
         <h3 class="portfolio-title">Moor Spa</h3>
       </div>
     </div>
-    <div class="portfolio-item reveal" data-category="brand">
+    <div class="portfolio-item reveal" data-category="brand" data-project="cnd-plexigel">
       <img src="static/images/portfolio-cnd.jpg" alt="CND Plexigel Training" class="portfolio-image">
       <div class="portfolio-overlay">
-        <span class="portfolio-category">Brand & Product Training</span>
+        <span class="portfolio-category">Brand &amp; Product Training</span>
         <h3 class="portfolio-title">CND Plexigel</h3>
       </div>
     </div>
-    <div class="portfolio-item reveal" data-category="instructional">
+    <div class="portfolio-item reveal" data-category="instructional" data-project="uc-learning">
       <img src="static/images/portfolio-uc-learning.jpg" alt="UC Learning Platform" class="portfolio-image">
       <div class="portfolio-overlay">
         <span class="portfolio-category">Instructional Design</span>
         <h3 class="portfolio-title">UC Learning</h3>
       </div>
     </div>
-    <div class="portfolio-item reveal" data-category="marketing">
+    <div class="portfolio-item reveal" data-category="marketing" data-project="safermobility">
       <img src="static/images/portfolio-safermobility.jpg" alt="SaferMobility Marketing" class="portfolio-image">
       <div class="portfolio-overlay">
-        <span class="portfolio-category">Marketing & Content</span>
+        <span class="portfolio-category">Marketing &amp; Content</span>
         <h3 class="portfolio-title">SaferMobility</h3>
       </div>
     </div>
-    <div class="portfolio-item reveal" data-category="creative">
+    <div class="portfolio-item reveal" data-category="creative" data-project="stay-fight">
       <img src="static/images/portfolio-stay-fight.png" alt="Stay Fight Overcome" class="portfolio-image">
       <div class="portfolio-overlay">
         <span class="portfolio-category">Creative Content</span>
         <h3 class="portfolio-title">Stay. Fight. Overcome.</h3>
       </div>
     </div>
-    <div class="portfolio-item reveal" data-category="marketing">
+    <div class="portfolio-item reveal" data-category="marketing" data-project="multi-platform">
       <img src="static/images/portfolio-multi-platform.png" alt="Multi-Platform Campaigns" class="portfolio-image">
       <div class="portfolio-overlay">
         <span class="portfolio-category">Marketing</span>
         <h3 class="portfolio-title">Multi-Platform Campaigns</h3>
       </div>
     </div>
-    <div class="portfolio-item reveal" data-category="creative">
+    <div class="portfolio-item reveal" data-category="creative" data-project="busy-mom">
       <img src="static/images/portfolio-busy-mom.png" alt="The Busy Mom Bible" class="portfolio-image">
       <div class="portfolio-overlay">
         <span class="portfolio-category">Creative Content</span>
@@ -249,7 +255,7 @@
 <!-- EXPERIENCE SECTION -->
 <section class="experience" id="experience">
   <span class="section-label reveal">Background</span>
-  <h2 class="section-title reveal">Experience & Skills</h2>
+  <h2 class="section-title reveal">Experience &amp; Skills</h2>
   <div class="experience-grid">
     <div class="experience-column reveal">
       <h3>Work History</h3>
@@ -283,11 +289,11 @@
         <div class="timeline-description">Articulate Storyline, Articulate Rise, Lectora, Moodle, Canvas, Adobe Captivate, SCORM compliance.</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-title">Design & Creative</div>
+        <div class="timeline-title">Design &amp; Creative</div>
         <div class="timeline-description">Adobe Creative Suite (Photoshop, Illustrator, InDesign), Figma, Canva, visual design, branding, UX/UI principles.</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-title">Content & Strategy</div>
+        <div class="timeline-title">Content &amp; Strategy</div>
         <div class="timeline-description">Content strategy, UX writing, brand storytelling, copywriting, SEO, marketing communications.</div>
       </div>
     </div>
@@ -302,7 +308,7 @@
     <div class="testimonial-card reveal">
       <p class="testimonial-quote">"Katlyn transformed our compliance training from boring to engaging. Completion rates jumped 35% and learner feedback was outstanding."</p>
       <div class="testimonial-author">Sarah M.</div>
-      <div class="testimonial-title">Learning & Development Manager</div>
+      <div class="testimonial-title">Learning &amp; Development Manager</div>
     </div>
     <div class="testimonial-card reveal">
       <p class="testimonial-quote">"Her content strategy work elevated our brand voice across all channels. She truly understands how to connect with audiences."</p>
@@ -333,7 +339,7 @@
       </div>
       <div class="contact-info-item">
         <div class="contact-info-label">LinkedIn</div>
-        <div class="contact-info-value"><a href="https://linkedin.com/in/katlyn-brown" target="_blank">linkedin.com/in/katlyn-brown</a></div>
+        <div class="contact-info-value"><a href="https://linkedin.com/in/katlyn-brown" target="_blank" rel="noopener">linkedin.com/in/katlyn-brown</a></div>
       </div>
       <div class="contact-info-item">
         <div class="contact-info-label">Resume</div>
@@ -354,8 +360,8 @@
         <select id="subject" name="subject" required>
           <option value="">Select a service...</option>
           <option value="elearning">eLearning Development</option>
-          <option value="content">Content Design & Strategy</option>
-          <option value="design">Graphic & Visual Design</option>
+          <option value="content">Content Design &amp; Strategy</option>
+          <option value="design">Graphic &amp; Visual Design</option>
           <option value="training">Training Program Design</option>
           <option value="other">Other</option>
         </select>
@@ -366,19 +372,28 @@
       </div>
       <button type="submit" class="form-submit">Send Message</button>
     </form>
+    <div id="formSuccess">Message received — I'll be in touch soon.</div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-logo">KB DESIGNS</div>
+  <div class="footer-logo">KB Designs</div>
   <div class="footer-links">
     <a href="static/2026_Brown_Katlyn_Resume.docx">Resume</a>
-    <a href="https://linkedin.com/in/katlyn-brown" target="_blank">LinkedIn</a>
+    <a href="https://linkedin.com/in/katlyn-brown" target="_blank" rel="noopener">LinkedIn</a>
     <a href="mailto:hello@kbdesigns.com">Email</a>
   </div>
   <div class="footer-copy">&copy; 2026 Katlyn Brown. All rights reserved.</div>
 </footer>
+
+<!-- PORTFOLIO MODAL -->
+<div id="modalOverlay" role="dialog" aria-modal="true" aria-label="Project details">
+  <div class="modal-box">
+    <button id="modalClose" aria-label="Close modal">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
 
 <!-- SCRIPTS -->
 <script src="static/app.js"></script>
