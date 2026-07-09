@@ -8,18 +8,26 @@
 // =============================================
 // PRELOADER
 // =============================================
-window.addEventListener('load', () => {
+const hidePreloader = () => {
   const preloader = document.getElementById('preloader');
-  if (preloader) {
-    setTimeout(() => {
-      preloader.classList.add('hidden');
-      document.body.style.overflow = '';
-      // Re-trigger observer after preloader hides
-      setTimeout(initRevealAnimations, 100);
-    }, 1600);
+  if (preloader && !preloader.classList.contains('hidden')) {
+    preloader.classList.add('hidden');
+    document.body.style.overflow = '';
+    // Re-trigger observer after preloader hides
+    setTimeout(initRevealAnimations, 100);
   }
+};
+
+// Dismiss on window load
+window.addEventListener('load', () => {
+  setTimeout(hidePreloader, 1200);
 });
+
+// Fallback: Ensure preloader is dismissed after 4 seconds regardless of load state
+setTimeout(hidePreloader, 4000);
+
 document.body.style.overflow = 'hidden';
+
 // Init reveals immediately so elements in viewport get animated
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(initRevealAnimations, 100);
@@ -184,7 +192,7 @@ const projectData = {
   'online-course': {
     category: 'Instructional Design',
     title: 'Online Course Design',
-    image: 'static/images/portfolio-online-course.png',
+    image: 'static/images/portfolio-online-course.jpg',
     description: 'A comprehensive SCORM-compliant certification program designed for wellness professionals. This multi-module course serves 1,000+ learners and features branching scenarios, interactive assessments, and real-world case studies.',
     details: [
       { label: 'Client', value: 'Universal Companies' },
@@ -195,8 +203,8 @@ const projectData = {
   'moor-spa': {
     category: 'Brand & Product Training',
     title: 'Moor Spa',
-    image: 'static/images/portfolio-moor-spa.webp',
-    description: 'Branded product training materials for spa professionals. Developed comprehensive step-by-step guides, visual treatment protocols, and digital training resources that elevated the brand experience for Moor Spa's professional network.',
+    image: 'static/images/portfolio-moor-spa.png',
+    description: 'Branded product training materials for spa professionals. Developed comprehensive step-by-step guides, visual treatment protocols, and digital training resources that elevated the brand experience for Moor Spa\'s professional network.',
     details: [
       { label: 'Client', value: 'Moor Spa' },
       { label: 'Tools', value: 'Adobe InDesign, Canva' },
@@ -206,7 +214,7 @@ const projectData = {
   'cnd-plexigel': {
     category: 'Brand & Product Training',
     title: 'CND Plexigel',
-    image: 'static/images/portfolio-cnd.webp',
+    image: 'static/images/portfolio-cnd.jpg',
     description: 'Professional training guides and instructional materials for CND\'s Plexigel product line. Created clear, visually engaging step-by-step protocols that empowered nail professionals to master the product with confidence.',
     details: [
       { label: 'Client', value: 'CND' },
@@ -217,7 +225,7 @@ const projectData = {
   'uc-learning': {
     category: 'Instructional Design',
     title: 'UC Learning Platform',
-    image: 'static/images/portfolio-uc-learning.webp',
+    image: 'static/images/portfolio-uc-learning.jpg',
     description: 'Educational materials and eLearning modules for Universal Companies\' learning platform. Redesigned existing content using adult learning principles and interactive design, achieving a 35% increase in course completion rates.',
     details: [
       { label: 'Client', value: 'Universal Companies' },
@@ -228,7 +236,7 @@ const projectData = {
   'safermobility': {
     category: 'Marketing & Content Strategy',
     title: 'SaferMobility',
-    image: 'static/images/portfolio-safermobility.webp',
+    image: 'static/images/portfolio-safermobility.jpg',
     description: 'Developed comprehensive marketing collateral and content strategy for SaferMobility, a campus safety application selected by universities nationwide. Led brand voice development and multi-channel digital content initiatives.',
     details: [
       { label: 'Client', value: 'SaferMobility' },
@@ -239,7 +247,7 @@ const projectData = {
   'stay-fight': {
     category: 'Creative Content',
     title: 'Stay. Fight. Overcome.',
-    image: 'static/images/portfolio-stay-fight.webp',
+    image: 'static/images/portfolio-stay-fight.png',
     description: 'A personal passion project and creative content campaign centered on resilience, mental health awareness, and authentic storytelling. Developed brand identity, content strategy, and visual assets for a community-focused initiative.',
     details: [
       { label: 'Type', value: 'Personal / Creative Project' },
@@ -250,7 +258,7 @@ const projectData = {
   'multi-platform': {
     category: 'Marketing',
     title: 'Multi-Platform Campaigns',
-    image: 'static/images/portfolio-multi-platform.webp',
+    image: 'static/images/portfolio-multi-platform.png',
     description: 'Designed and executed multi-platform marketing campaigns across social media, email, and digital channels. Created cohesive visual assets and copy that drove measurable engagement and brand awareness for multiple clients.',
     details: [
       { label: 'Type', value: 'Marketing Campaigns' },
@@ -261,7 +269,7 @@ const projectData = {
   'busy-mom': {
     category: 'Creative Content',
     title: 'The Busy Mom Bible',
-    image: 'static/images/portfolio-busy-mom.webp',
+    image: 'static/images/portfolio-busy-mom.png',
     description: 'A creative content project and digital resource guide for working moms. Developed brand identity, content strategy, and visual design for a relatable, authentic platform that celebrates the reality of modern motherhood.',
     details: [
       { label: 'Type', value: 'Creative / Personal Brand' },
@@ -349,16 +357,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-
-// =============================================
-// HERO IMAGE PARALLAX (subtle)
-// =============================================
-const heroPanel = document.querySelector('.hero-image-panel img');
-if (heroPanel) {
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    if (scrolled < window.innerHeight) {
-      heroPanel.style.transform = `translateY(${scrolled * 0.12}px)`;
-    }
-  }, { passive: true });
-}
