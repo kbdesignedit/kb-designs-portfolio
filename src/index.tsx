@@ -556,41 +556,7 @@ app.get('/', (c) => {
             </a>
           </div>
         </div>
-        <div class="contact-form-wrap reveal-right">
-          <form class="contact-form" id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required placeholder="Jane Doe" />
-              </div>
-              <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" required placeholder="jane@example.com" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="subject">Project Type</label>
-              <select id="subject" name="subject">
-                <option value="">Select a service...</option>
-                <option value="elearning">eLearning Development</option>
-                <option value="content">Content Design &amp; Strategy</option>
-                <option value="graphic">Graphic &amp; Visual Design</option>
-                <option value="training">Training Program Design</option>
-                <option value="consulting">Performance Consulting</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Tell Me About Your Project</label>
-              <textarea id="message" name="message" rows="5" placeholder="Share some details about what you're looking for..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary form-submit">Send Message <span class="btn-icon">&rarr;</span></button>
-          </form>
-          <div class="form-success" id="formSuccess">
-            <h3>Thank You!</h3>
-            <p>Your message has been sent. I'll be in touch soon!</p>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
