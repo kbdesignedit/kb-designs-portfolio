@@ -1085,9 +1085,10 @@ img {
 .testimonials {
   background: var(--ink);
   color: var(--cream);
-  padding: 130px 48px;
+  padding: 100px 48px;
   position: relative;
   overflow: hidden;
+  border-top: 1px solid rgba(166, 94, 67, 0.2);
 }
 
 .testimonials::before {
