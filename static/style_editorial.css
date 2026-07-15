@@ -1080,6 +1080,15 @@ img {
   color: rgba(27, 27, 29, 0.75);
 }
 
+.experience-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(166, 94, 67, 0.2);
+}
+
 /* =============================================
    TESTIMONIALS SECTION
    ============================================= */
@@ -1236,6 +1245,55 @@ img {
 }
 
 .contact-info-value a:hover {
+  color: var(--rust);
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px 24px;
+  background: rgba(166, 94, 67, 0.04);
+  border: 1.5px solid rgba(166, 94, 67, 0.15);
+  border-radius: 4px;
+  transition: all var(--fast);
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.contact-link:hover {
+  background: rgba(166, 94, 67, 0.1);
+  border-color: var(--rust);
+  transform: translateY(-4px);
+}
+
+.contact-link-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+.contact-link-label {
+  font-family: var(--font-sub);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-align: center;
+  transition: color var(--fast);
+}
+
+.contact-link:hover .contact-link-label {
   color: var(--rust);
 }
 
@@ -1622,6 +1680,10 @@ img {
 
   .contact-inner {
     gap: 48px;
+  }
+
+  .contact-links {
+    grid-template-columns: 1fr;
   }
 
   .footer {
