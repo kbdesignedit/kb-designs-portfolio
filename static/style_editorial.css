@@ -1594,13 +1594,32 @@ img {
     padding: 0 20px;
   }
 
+  .nav-logo img {
+    height: 48px;
+  }
+
   .hero {
     padding: 120px 20px 80px;
     min-height: auto;
   }
 
   .hero-title {
-    font-size: clamp(2.8rem, 14vw, 4rem);
+    font-size: clamp(2.4rem, 12vw, 3.8rem);
+    margin-bottom: 20px;
+  }
+
+  .hero-title-accent {
+    font-size: 0.65em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    margin-bottom: 40px;
   }
 
   .hero-buttons {
@@ -1619,7 +1638,14 @@ img {
 
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
+  }
+
+  .about-badge {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    bottom: 20px;
+    left: 20px;
   }
 
   .about-stats {
@@ -1698,11 +1724,22 @@ img {
   }
 
   .modal-box {
-    max-height: 95vh;
+    max-height: 92vh;
+    width: 95%;
   }
 
   .modal-hero-img {
-    height: 220px;
+    height: 200px;
+  }
+
+  #modalBody h2 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+
+  #modalBody p {
+    font-size: 0.95rem;
+    line-height: 1.7;
   }
 
   #modalBody .category,
@@ -1712,23 +1749,43 @@ img {
     padding-left: 24px;
     padding-right: 24px;
   }
+
+  .modal-detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
 }
 
 /* =============================================
    SMALL MOBILE (≤480px)
    ============================================= */
 @media (max-width: 480px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+
   .about-stats {
     grid-template-columns: 1fr;
     gap: 24px;
   }
 
   .portfolio-filters {
-    gap: 8px;
+    gap: 6px;
   }
 
   .filter-btn {
-    padding: 8px 16px;
-    font-size: 0.62rem;
+    padding: 8px 12px;
+    font-size: 0.6rem;
+    flex: 1 1 calc(50% - 6px);
+    text-align: center;
+  }
+
+  .testimonial-card {
+    padding: 32px 24px;
+  }
+
+  .footer-logo-img {
+    height: 100px;
   }
 }

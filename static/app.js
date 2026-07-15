@@ -94,15 +94,20 @@ if (navToggle && navLinks) {
 
 function updateActiveNavLink() {
   const sections = document.querySelectorAll('section[id]');
-  const scrollPos = window.scrollY + 120;
+  const scrollPos = window.scrollY + 150;
+  
+  let currentSectionId = '';
   sections.forEach(section => {
-    const top    = section.offsetTop;
-    const bottom = top + section.offsetHeight;
-    const id     = section.getAttribute('id');
-    const link   = document.querySelector(`.nav-links a[href="#${id}"]`);
-    if (link) {
-      link.classList.toggle('active', scrollPos >= top && scrollPos < bottom);
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    if (scrollPos >= top && scrollPos < top + height) {
+      currentSectionId = section.getAttribute('id');
     }
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const href = link.getAttribute('href').substring(1);
+    link.classList.toggle('active', href === currentSectionId);
   });
 }
 
