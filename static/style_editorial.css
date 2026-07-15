@@ -1010,8 +1010,9 @@ img {
    EXPERIENCE SECTION
    ============================================= */
 .experience {
-  background: var(--cream);
+  background: var(--bg-mid);
   padding: 130px 48px;
+  border-top: 1px solid rgba(166, 94, 67, 0.1);
 }
 
 .experience .section-title {
