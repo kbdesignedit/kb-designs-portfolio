@@ -1249,10 +1249,13 @@ img {
 }
 
 .contact-links {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 32px;
-  max-width: 600px;
+  flex-wrap: wrap;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -1683,7 +1686,11 @@ img {
   }
 
   .contact-links {
-    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .contact-link {
+    padding: 24px 16px;
   }
 
   .footer {
