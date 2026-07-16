@@ -81,4 +81,4 @@ npx wrangler pages deploy dist --project-name kb-designs
 - **Email**: katyrbrown96@gmail.com
 - **Phone**: (270) 210-2478
 - **Location**: Madisonville, Kentucky
-- **LinkedIn**: linkedin.com/in/katlyn-brown
+- **LinkedIn**: linkedin.com/in/katlynbrown96
