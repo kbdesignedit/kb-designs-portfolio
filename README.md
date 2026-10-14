@@ -15,4 +15,4 @@ python3 -m http.server 3000
 
 Open `http://localhost:3000`.
 
-The site is dependency-free and GitHub Pages-ready. All visual assets, fonts, work samples, and downloadable documents are local under `static/assets/`.
+The site is dependency-free and GitHub Pages-ready. All visual assets, local fonts, project work, and downloadable documents are stored under the root-level `assets/` directory.
